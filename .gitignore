@@ -12,7 +12,14 @@
 
 # testing
 /coverage
-
+node_modules
+.env
+android/.gradle
+android/app/build
+ios/Pods
+ios/build
+dist
+build
 # next.js
 /.next/
 /out/
