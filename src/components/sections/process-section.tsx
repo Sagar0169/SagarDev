@@ -2,52 +2,54 @@
 
 import { motion } from "framer-motion";
 
-const steps = [
+const experiences = [
   {
-    title: "Research & Systems Thinking",
+    period: "2025 — Present",
+    role: "Mobile Engineer",
+    company: "Chaotix",
     description:
-      "Understanding workflows, bottlenecks, and scalability before writing code.",
+      "Building and scaling an AI-powered text-to-game platform focused on interactive consumer experiences.",
   },
   {
-    title: "Designing Architecture",
+    period: "2023 — 2025",
+    role: "Android Developer",
+    company: "Silver Touch Technologies",
     description:
-      "Creating maintainable structures focused on performance and clarity.",
-  },
-  {
-    title: "Building Experiences",
-    description:
-      "Developing polished interfaces with thoughtful interactions and responsiveness.",
-  },
-  {
-    title: "Automation & Optimization",
-    description:
-      "Reducing repetitive tasks through workflows, AI systems, and automation.",
+      "Built scalable mobile systems with focus on performance, architecture, and production-grade user experiences.",
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <section className="relative px-6 py-52">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
-        <div className="lg:sticky lg:top-32 h-fit">
+    <section className="relative px-6 py-52 overflow-hidden">
+      {/* Atmosphere */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-0 top-0 w-[500px] h-[500px] rounded-full bg-neutral-200 blur-3xl opacity-30" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mb-24"
+        >
           <p className="text-sm uppercase tracking-[0.3em] text-black/40 mb-6">
-            Process
+            Experience
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.04em] leading-tight">
-            Building with intention, not noise.
+          <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.05em] leading-[1]">
+            Building products, systems, and mobile experiences at scale.
           </h2>
+        </motion.div>
 
-          <p className="mt-10 text-lg leading-relaxed text-black/60 max-w-xl">
-            My approach combines engineering, product thinking, design clarity,
-            and automation to create systems that scale naturally.
-          </p>
-        </div>
-
+        {/* Timeline */}
         <div className="space-y-10">
-          {steps.map((step, index) => (
+          {experiences.map((item, index) => (
             <motion.div
-              key={step.title}
+              key={item.company}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -56,22 +58,34 @@ export default function ProcessSection() {
               }}
               viewport={{ once: true }}
               className="
-                rounded-[32px]
+                rounded-[36px]
                 border border-black/10
-                bg-white/70
+                bg-white/80
                 backdrop-blur-xl
-                p-10
+                p-10 md:p-14
               "
             >
-              <p className="text-sm text-black/30 mb-6">0{index + 1}</p>
+              <div className="grid md:grid-cols-[220px_1fr] gap-12">
+                {/* Left */}
+                <div>
+                  <p className="text-sm uppercase tracking-[0.25em] text-black/35">
+                    {item.period}
+                  </p>
+                </div>
 
-              <h3 className="text-3xl font-semibold tracking-[-0.03em] mb-4">
-                {step.title}
-              </h3>
+                {/* Right */}
+                <div>
+                  <h3 className="text-3xl font-semibold tracking-[-0.04em]">
+                    {item.role}
+                  </h3>
 
-              <p className="text-black/60 leading-relaxed text-lg">
-                {step.description}
-              </p>
+                  <p className="mt-3 text-xl text-black/55">{item.company}</p>
+
+                  <p className="mt-8 text-lg text-black/60 leading-relaxed max-w-3xl">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -12,7 +12,8 @@ export default function HeroSection() {
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-neutral-200 blur-3xl opacity-50" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-[1fr_320px] gap-20 items-center">
+        {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -89,6 +90,94 @@ export default function HeroSection() {
             <div>Currently based in Delhi, India</div>
 
             <div>React Native & Android</div>
+          </div>
+        </motion.div>
+
+        {/* Floating Project Preview */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+          }}
+          className="
+            hidden lg:block
+            rounded-[36px]
+            border border-black/10
+            bg-white/80
+            backdrop-blur-xl
+            p-6
+            shadow-[0_20px_80px_rgba(0,0,0,0.06)]
+          "
+        >
+          {/* Top */}
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.25em] text-black/35">
+                Featured Build
+              </p>
+
+              <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em]">
+                Chaotix
+              </h3>
+            </div>
+
+            <div className="w-3 h-3 rounded-full bg-green-500" />
+          </div>
+
+          {/* Preview */}
+          <div className="mt-8 rounded-3xl bg-black text-white p-6">
+            <p className="text-sm text-white/60 mb-6">
+              AI Text-to-Game Platform
+            </p>
+
+            <div className="space-y-4">
+              {[
+                "AI-generated gameplay",
+                "Interactive storytelling",
+                "Real-time mobile UX",
+              ].map((item) => (
+                <div key={item} className="flex items-center justify-between">
+                  <span className="text-sm">{item}</span>
+
+                  <div className="w-2 h-2 rounded-full bg-white/30" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Metrics */}
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            {[
+              {
+                value: "2.5K+",
+                label: "Users",
+              },
+              {
+                value: "200+",
+                label: "DAUs",
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-black/10 p-4"
+              >
+                <p className="text-2xl font-bold tracking-[-0.04em]">
+                  {item.value}
+                </p>
+
+                <p className="mt-1 text-sm text-black/45">{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Footer */}
+          <div className="mt-8 pt-6 border-t border-black/10">
+            <p className="text-sm text-black/50 leading-relaxed">
+              Building AI-powered consumer experiences with focus on mobile
+              interaction and rapid experimentation.
+            </p>
           </div>
         </motion.div>
       </div>
