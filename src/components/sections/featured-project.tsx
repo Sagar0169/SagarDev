@@ -4,190 +4,237 @@ import { motion } from "framer-motion";
 
 export default function FeaturedProject() {
   return (
-    <section className="relative px-6 py-52 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-0 bottom-0 w-[500px] h-[500px] rounded-full bg-neutral-200 blur-3xl opacity-40" />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Heading */}
+    <section className="relative py-40 md:py-52 px-6 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
           viewport={{ once: true }}
-          className="max-w-5xl mb-24"
+          className="max-w-[920px]"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-black/40 mb-6">
+          <p className="text-[11px] uppercase tracking-[0.24em] text-black/35">
             Featured Project
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.05em] leading-[1]">
+          <h2
+            className="
+              mt-8
+              text-[40px]
+              md:text-[58px]
+              tracking-[-0.06em]
+              leading-[0.96]
+              font-semibold
+            "
+          >
             Building AI-powered interactive experiences for the next generation.
           </h2>
         </motion.div>
 
         {/* Main Layout */}
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
-          {/* Left Showcase */}
+        <div className="mt-28 grid lg:grid-cols-[1.1fr_420px] gap-20 items-start">
+          {/* LEFT VISUAL */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              ease: "easeOut",
+            }}
             viewport={{ once: true }}
-            className="
-              relative
-              rounded-[40px]
-              border border-black/10
-              bg-white/80
-              backdrop-blur-xl
-              p-8
-              overflow-hidden
-            "
           >
-            {/* Window Controls */}
-            <div className="flex items-center gap-2 mb-10">
-              <div className="w-3 h-3 rounded-full bg-red-300" />
-              <div className="w-3 h-3 rounded-full bg-yellow-300" />
-              <div className="w-3 h-3 rounded-full bg-green-300" />
-            </div>
-
-            {/* Preview */}
-            <div className="rounded-[32px] bg-black text-white p-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-white/50">
-                    AI Text-to-Game Platform
-                  </p>
-
-                  <h3 className="mt-3 text-4xl font-semibold tracking-[-0.04em]">
-                    Chaotix
-                  </h3>
-                </div>
-
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-              </div>
-
-              {/* Features */}
-              <div className="mt-12 space-y-5">
-                {[
-                  "AI-generated gameplay",
-                  "Interactive storytelling",
-                  "Real-time mobile experience",
-                  "Rapid experimentation system",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="
-                      flex items-center justify-between
-                      rounded-2xl
-                      border border-white/10
-                      px-5 py-4
-                    "
-                  >
-                    <span className="text-white/90">{item}</span>
-
-                    <div className="w-2 h-2 rounded-full bg-white/30" />
-                  </div>
-                ))}
-              </div>
-
-              {/* Metrics */}
-              <div className="mt-12 grid grid-cols-2 gap-4">
-                {[
-                  {
-                    value: "2.5K+",
-                    label: "Users",
-                  },
-                  {
-                    value: "200+",
-                    label: "DAUs",
-                  },
-                  {
-                    value: "10M+",
-                    label: "Views",
-                  },
-                  {
-                    value: "50K+",
-                    label: "Audience",
-                  },
-                ].map((item) => (
-                  <div key={item.label} className="rounded-2xl bg-white/5 p-5">
-                    <p className="text-3xl font-bold tracking-[-0.04em]">
-                      {item.value}
+            {/* Main Visual */}
+            <div
+              className="
+                aspect-[1.25/1]
+                rounded-[28px]
+                border border-black/10
+                bg-[#ece8e4]
+                overflow-hidden
+                relative
+              "
+            >
+              {/* Fake UI */}
+              <div className="absolute inset-0 p-8 flex flex-col">
+                {/* Top */}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-black/35">
+                      AI Text-to-Game Platform
                     </p>
 
-                    <p className="mt-2 text-sm text-white/50">{item.label}</p>
+                    <h3 className="mt-4 text-[40px] tracking-[-0.06em] font-semibold">
+                      Chaotix
+                    </h3>
                   </div>
-                ))}
+
+                  <div className="w-2 h-2 rounded-full bg-black/30" />
+                </div>
+
+                {/* Mock UI Blocks */}
+                <div className="mt-16 space-y-4">
+                  {[
+                    "Interactive storytelling",
+                    "AI-generated gameplay",
+                    "Realtime mobile experiences",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="
+                        h-16
+                        rounded-2xl
+                        border border-black/10
+                        bg-white/40
+                        backdrop-blur-sm
+                        px-6
+                        flex items-center
+                      "
+                    >
+                      <p className="text-[15px] text-black/65">{item}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom Stats */}
+                <div className="mt-auto grid grid-cols-4 gap-4">
+                  {[
+                    {
+                      value: "2.5K+",
+                      label: "USERS",
+                    },
+                    {
+                      value: "200+",
+                      label: "DAUS",
+                    },
+                    {
+                      value: "10M+",
+                      label: "VIEWS",
+                    },
+                    {
+                      value: "50K+",
+                      label: "REACH",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      className="
+                        border border-black/10
+                        rounded-2xl
+                        bg-white/50
+                        p-4
+                      "
+                    >
+                      <p className="text-[24px] tracking-[-0.05em] font-semibold">
+                        {item.value}
+                      </p>
+
+                      <p className="mt-2 text-[9px] tracking-[0.2em] uppercase text-black/35">
+                        {item.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Content */}
+          {/* RIGHT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.8,
-              delay: 0.1,
+              duration: 0.7,
+              delay: 0.05,
+              ease: "easeOut",
             }}
             viewport={{ once: true }}
+            className="lg:sticky lg:top-32"
           >
-            <p className="text-sm uppercase tracking-[0.3em] text-black/40 mb-6">
+            {/* Meta */}
+            <p className="text-[11px] uppercase tracking-[0.22em] text-black/35">
               Case Study
             </p>
 
-            <div className="space-y-14">
-              {/* Intro */}
+            {/* Sections */}
+            <div className="mt-12 space-y-14">
+              {/* Product */}
               <div>
-                <h3 className="text-3xl font-semibold tracking-[-0.04em] mb-5">
+                <h3 className="text-[26px] tracking-[-0.05em] font-semibold">
                   The Product
                 </h3>
 
-                <p className="text-lg text-black/60 leading-relaxed">
+                <p
+                  className="
+                    mt-5
+                    text-[16px]
+                    leading-[1.9]
+                    text-black/58
+                  "
+                >
                   Chaotix is an AI-powered text-to-game platform transforming
-                  ideas into interactive experiences.
+                  ideas into interactive consumer experiences.
                 </p>
               </div>
 
               {/* Ownership */}
               <div>
-                <h3 className="text-3xl font-semibold tracking-[-0.04em] mb-5">
+                <h3 className="text-[26px] tracking-[-0.05em] font-semibold">
                   What I Owned
                 </h3>
 
-                <p className="text-lg text-black/60 leading-relaxed">
-                  Led mobile experience, frontend systems, architecture
-                  decisions, and product execution while scaling the platform
-                  toward real users.
+                <p
+                  className="
+                    mt-5
+                    text-[16px]
+                    leading-[1.9]
+                    text-black/58
+                  "
+                >
+                  Led mobile systems, frontend architecture, creator workflows,
+                  and product-focused execution while scaling toward real users.
                 </p>
               </div>
 
               {/* Challenge */}
               <div>
-                <h3 className="text-3xl font-semibold tracking-[-0.04em] mb-5">
+                <h3 className="text-[26px] tracking-[-0.05em] font-semibold">
                   The Challenge
                 </h3>
 
-                <p className="text-lg text-black/60 leading-relaxed">
-                  Building an AI-first consumer experience required balancing
-                  rapid experimentation, scalable systems, smooth mobile UX, and
-                  real-time engagement loops.
+                <p
+                  className="
+                    mt-5
+                    text-[16px]
+                    leading-[1.9]
+                    text-black/58
+                  "
+                >
+                  Building an AI-first interactive platform required balancing
+                  rapid experimentation, scalable systems, smooth UX, and
+                  creator engagement loops simultaneously.
                 </p>
               </div>
 
               {/* Outcome */}
               <div>
-                <h3 className="text-3xl font-semibold tracking-[-0.04em] mb-5">
+                <h3 className="text-[26px] tracking-[-0.05em] font-semibold">
                   Outcome
                 </h3>
 
-                <p className="text-lg text-black/60 leading-relaxed">
-                  Built a fast-moving AI product ecosystem combining mobile
-                  engineering, creator-focused experiences, and growth-driven
-                  experimentation.
+                <p
+                  className="
+                    mt-5
+                    text-[16px]
+                    leading-[1.9]
+                    text-black/58
+                  "
+                >
+                  Built a fast-moving AI ecosystem combining mobile engineering,
+                  creator-first product thinking, and growth-oriented execution.
                 </p>
               </div>
             </div>

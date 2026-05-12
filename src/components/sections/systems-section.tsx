@@ -4,90 +4,121 @@ import { motion } from "framer-motion";
 
 const items = [
   {
+    index: "01",
     title: "AI Consumer Apps",
     description:
-      "Building AI-powered mobile experiences focused on engagement, usability, and real-world adoption.",
+      "Building AI-native mobile experiences focused on usability, engagement, and real-world adoption.",
   },
   {
-    title: "Mobile Engineering",
+    index: "02",
+    title: "Mobile Systems",
     description:
-      "Creating scalable React Native and Android systems with performance-first architecture.",
+      "Architecting scalable React Native and Android applications with performance-first foundations.",
   },
   {
-    title: "Growth Systems",
+    index: "03",
+    title: "Growth Infrastructure",
     description:
-      "Combining product thinking, experimentation, and content-driven distribution to drive user growth.",
+      "Combining content systems, experimentation, and distribution to drive sustainable product growth.",
   },
   {
+    index: "04",
     title: "Automation Workflows",
     description:
-      "Designing automation pipelines and AI workflows that reduce operational overhead and scale execution.",
+      "Designing creator pipelines, AI workflows, and operational systems that scale execution.",
   },
 ];
 
 export default function SystemsSection() {
   return (
-    <section className="relative px-6 py-52 overflow-hidden">
-      {/* Atmosphere */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-neutral-200 blur-3xl opacity-40" />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Heading */}
+    <section className="relative py-40 md:py-52 px-6">
+      <div className="max-w-[1280px] mx-auto">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
           viewport={{ once: true }}
-          className="max-w-4xl mb-24"
+          className="max-w-[820px]"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-black/40 mb-6">
-            What I Build
+          <p className="text-[11px] uppercase tracking-[0.24em] text-black/35">
+            Capabilities
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.05em] leading-[1]">
+          <h2
+            className="
+              mt-8
+              text-[40px]
+              md:text-[58px]
+              tracking-[-0.06em]
+              leading-[0.96]
+              font-semibold
+            "
+          >
             Building scalable systems across AI, mobile, and growth.
           </h2>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Grid */}
+        <div className="mt-28 border-t border-black/10">
           {items.map((item, index) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.8,
-                delay: index * 0.1,
+                duration: 0.7,
+                delay: index * 0.05,
+                ease: "easeOut",
               }}
               viewport={{ once: true }}
               className="
+                grid
+                md:grid-cols-[120px_1fr_420px]
+                gap-10
+                py-14
+                border-b border-black/10
                 group
-                rounded-[32px]
-                border border-black/10
-                bg-white/80
-                backdrop-blur-xl
-                p-10
-                min-h-[280px]
-                flex flex-col justify-between
-                hover:-translate-y-2
-                hover:shadow-[0_20px_80px_rgba(0,0,0,0.06)]
-                transition-all duration-500
               "
             >
+              {/* Number */}
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-black/5 mb-10" />
+                <p className="text-[11px] tracking-[0.22em] uppercase text-black/30">
+                  {item.index}
+                </p>
+              </div>
 
-                <h3 className="text-3xl font-semibold tracking-[-0.04em]">
+              {/* Title */}
+              <div>
+                <h3
+                  className="
+                    text-[30px]
+                    md:text-[38px]
+                    tracking-[-0.05em]
+                    leading-[1]
+                    font-semibold
+                  "
+                >
                   {item.title}
                 </h3>
               </div>
 
-              <p className="text-black/60 leading-relaxed text-lg max-w-md">
-                {item.description}
-              </p>
+              {/* Description */}
+              <div>
+                <p
+                  className="
+                    text-[16px]
+                    leading-[1.9]
+                    text-black/58
+                    max-w-[420px]
+                  "
+                >
+                  {item.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

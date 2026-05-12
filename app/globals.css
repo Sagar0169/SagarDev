@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf7;
+  --background: #f5f3f1;
   --foreground: #111111;
 }
 
@@ -12,17 +12,18 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  overflow-x: hidden;
-  font-family: var(--font-inter);
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-space);
+  font-feature-settings:
+    "ss01" on,
+    "ss02" on,
+    "cv01" on,
+    "cv02" on;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
 }
 
 * {
@@ -30,5 +31,5 @@ h6 {
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.08);
 }

@@ -6,7 +6,9 @@ import AboutSection from "@/src/components/sections/about-section";
 import BuildingPublicSection from "@/src/components/sections/building-public";
 import FeaturedProject from "@/src/components/sections/featured-project";
 import ProcessSection from "@/src/components/sections/process-section";
+import ProjectsWall from "@/src/components/sections/projects-wall";
 import SystemsSection from "@/src/components/sections/systems-section";
+import WorkflowSection from "@/src/components/sections/workflow-section";
 import SectionDivider from "@/src/components/ui/section-divider";
 
 export default function Home() {
@@ -20,6 +22,8 @@ export default function Home() {
       <SystemsSection />
       <FeaturedProject />
       <BuildingPublicSection />
+      <WorkflowSection />
+      <ProjectsWall />
       <ProcessSection />
 
       <Footer />
