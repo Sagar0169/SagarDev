@@ -22,7 +22,7 @@ export default function Home() {
       <HeroSection />
       <FeaturedProject />
       <SystemsSection />
-      <WritingSection />
+      {/* <WritingSection /> */}
       <FocusSection />
 
       <Footer />
